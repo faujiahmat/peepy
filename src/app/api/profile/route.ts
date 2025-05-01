@@ -1,5 +1,6 @@
 import { prisma } from '@/db/prisma';
 import { AuthenticatedRequest, authMiddleware } from '@/middleware/auth';
+import { encrypt } from '@/utils/bcrypt';
 import { updateUserValidation } from '@/utils/validation';
 import { NextResponse } from 'next/server';
 
@@ -92,6 +93,8 @@ export async function PATCH(req: AuthenticatedRequest) {
       );
     }
 
+    const hashPassword = value.password ? encrypt(value.password) : null;
+
     const update = await prisma.user.update({
       where: {
         id: req.user?.id,
@@ -99,7 +102,7 @@ export async function PATCH(req: AuthenticatedRequest) {
       data: {
         name: value.name,
         email: value.email,
-        password: value.password,
+        password: hashPassword || user.password,
       },
     });
 
