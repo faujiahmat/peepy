@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-biru-100: #e3f2fd;
+  --color-biru-200: #bbdefb;
+  --color-biru-300: #0088d2;
+  --color-biru-400: #445c73;
+  --color-putih-100: #f9fafb;
+  --color-hitam-100: #424242;
+  --color-hitam-200: #333333;
+  --color-merah: #ef5350;
+  --color-kuning: #d2c700;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--color-hitam-200);
+}
