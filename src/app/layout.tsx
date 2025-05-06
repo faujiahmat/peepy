@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-linear-to-b from-biru-100 to-biru-200 antialiased px-4 sm:px-8 md:px-10 lg:px-14 h-screen ${sans.className} overflow-hidden flex flex-col pb-3`}
+        className={`bg-linear-to-b from-biru-100 to-biru-200 antialiased px-4 sm:px-8 md:px-10 lg:px-14 h-dvh ${sans.className} overflow-hidden flex flex-col pb-3`}
       >
         {children}
       </body>
