@@ -21,8 +21,6 @@ export default function ProfileClient() {
       return;
     }
 
-    console.log(token);
-
     const fetchProfile = async () => {
       try {
         const res = await fetch('/api/profile', {
@@ -118,8 +116,6 @@ export default function ProfileClient() {
       });
 
       const data = await res.json();
-
-      console.log(data);
 
       if (!res.ok) {
         setMessage(data.message || 'Gagal menghapus akun');

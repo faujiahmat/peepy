@@ -10,7 +10,7 @@ export default function LogoutModal({ onClose }: { onClose: () => void }) {
     try {
       localStorage.removeItem('token');
 
-      await fetch('/api/logout', {
+      await fetch('/api/auth/logout', {
         method: 'POST',
         credentials: 'include',
       });
